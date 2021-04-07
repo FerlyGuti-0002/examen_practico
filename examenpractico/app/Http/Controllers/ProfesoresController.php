@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profesores;
 use Illuminate\Http\Request;
 
 class ProfesoresController extends Controller
@@ -14,6 +15,8 @@ class ProfesoresController extends Controller
     public function index()
     {
         //
+        $profesores = Profesores::all();
+        return view('profesores.index')->with('profesores', $profesores);
     }
 
     /**
